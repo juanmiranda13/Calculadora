@@ -1,0 +1,155 @@
+/* el selector "*" me indica  que selecciona todo mi contenido dentro del html*/
+* {
+    font-family: 'Zen Kurenaido', sans-serif;
+    color: #ffffff;
+}
+
+body {
+    margin: 0;
+    background-color: #00000032;
+}
+
+header {
+    font-size: 30px;
+    text-align: center;
+}
+
+h1 {
+    color: #105c23;
+    padding-top: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h2{
+    color: #105c23;
+    font-size: 25px;
+    padding-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.columna2 {
+    grid-column: span 2;
+}
+
+
+#valor-arriba {
+    font-size: 24px;
+}
+#valor-abajo {
+    font-size: 20px;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.calculadora {
+    display: grid;
+    grid-template-columns: repeat(4, 75px); /*Voy a crear 4 columnas y asi se repiten para abajo con medida de 75px */
+    grid-template-rows: 160px repeat(5, 75px); /*el primer valor es el alto del display, las rows son 5 con tamaño de igual valor anterior 75px */
+    background-color: #00916e;
+    padding: 15px;
+    border-radius: 32px;
+    box-shadow: 10px 5px 0px 5px #201f1f57;
+}
+
+/* botones C/ box shadow efecto que sale para afuera*/
+button {
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    border-radius: 32px;
+    font-size: 24px;
+    border: none;
+    background-color: #00916e;
+    box-shadow: 5px 5px 10px -3px #00000040, /* primer sombra de abajo y segunda sombra mas suave para dar el efecto*/ -5px -5px 15px 3px #00ffc11f;
+}
+
+button:active {  /* efecto para cuando se hace "click" y mejor visual para cliente */
+    background-color: #006f54;
+}
+button:focus { /* se saca el outline que queda como presionado en el boton al presionar */
+    outline: none;
+}
+
+.display {
+    grid-column: 1 / -1;
+    padding: 16px;
+    display: flex;
+    margin: 10px 10px 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #363636;
+    border-radius: 32px;
+    text-align:  right;
+    justify-content: space-between;
+    word-break: break-all;  /* etiqueta para poder ir a dos lineas de valores */ 
+    box-shadow: 0px 0px 0px 10px #00000033 /* 33 es el valor de la opacidad*/;
+}
+
+
+/*RESPONSIVE*/
+
+@media screen and (min-width: 780px) and (max-width: 1024px){
+
+    body{
+        padding-right: 27%;  
+    }
+
+    h1 {
+        color: #000000;
+        font-size: 55px;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    h2{
+        color: #000000;
+        font-size: 35px;
+        padding-bottom: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 780px){
+
+    h1 {
+        color: #13d143;
+        font-size: 2%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    h2{
+        color: #105c23;
+        font-size: 25px;
+        padding-bottom: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+}
+
+
+@media screen and (max-width: 480px){
+
+    h1 {
+        color: #000000;
+        text-align: center;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    h2{
+        color: #000000;
+        font-size: 20px;
+        text-align: center;
+        padding-bottom: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .calculadora{
+        box-shadow: none;
+    }
+
+}
